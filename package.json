@@ -1,0 +1,27 @@
+{
+  "name": "gta-inventory",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview",
+    "dev:frontend": "vite",
+    "dev:backend": "python -m uvicorn app:app --app-dir backend --host 127.0.0.1 --port 8000 --reload",
+    "dev:all": "concurrently -k -n BACKEND,FRONTEND -c blue,green \"npm:dev:backend\" \"npm:dev:frontend\""
+  },
+  "dependencies": {
+    "pinia": "latest",
+    "vue": "latest",
+    "vue-router": "latest"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "latest",
+    "sass": "latest",
+    "typescript": "latest",
+    "vite": "latest",
+    "vue-tsc": "latest",
+    "concurrently": "^9.1.0"
+  }
+}
